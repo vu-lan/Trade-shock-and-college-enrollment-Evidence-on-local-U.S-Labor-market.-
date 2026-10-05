@@ -1,0 +1,1 @@
+Add author-approved reference_metrics.csv with output_id, metric, expected columns. Keep full precision; record source manuscript/version. Do not create expected values from the same new run being tested.
