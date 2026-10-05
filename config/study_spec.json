@@ -1,0 +1,22 @@
+{
+  "manuscript_version": null,
+  "sample_years": null,
+  "change_periods": null,
+  "period_scaling": null,
+  "microdata_samples_and_extract_ids": null,
+  "population_restrictions": null,
+  "enrollment_definition": null,
+  "enrollment_denominator": null,
+  "person_and_regression_weights": null,
+  "geography_vintages_and_allocation": null,
+  "trade_exposure_formula_units_and_bases": null,
+  "instrument_formula_countries_and_bases": null,
+  "endogenous_regressors_and_instruments": null,
+  "controls_and_fixed_effects": null,
+  "missing_value_and_outlier_rules": null,
+  "standard_errors_and_clustering": null,
+  "first_stage_diagnostics": null,
+  "robustness_specifications": null,
+  "random_seed_and_deterministic_sort": null,
+  "software_versions_and_lockfile": null
+}

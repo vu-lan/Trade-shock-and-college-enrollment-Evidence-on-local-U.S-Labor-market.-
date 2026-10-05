@@ -1,0 +1,4 @@
+# Scaffold runner and tests use only the Python standard library.
+# Python 3.11 or 3.12. No third-party packages are currently required.
+# Add exact original-analysis dependencies only after auditing source code.
+# This is not a locked environment for the original econometric analysis.

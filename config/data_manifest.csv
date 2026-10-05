@@ -1,0 +1,6 @@
+dataset_id,path,required,sha256,source_url,upstream_filename,release_or_extract_id,access_instructions,license_or_terms
+microdata,data/raw/ipums_extract.dat.gz,true,,,,,,
+microdata_metadata,data/raw/ipums_extract.xml,true,,,,,,
+geography,data/raw/puma_cz_crosswalk.csv,true,,,,,,
+trade_exposure_source,data/raw/adh_source.dta,true,,,,,,
+reference_metrics,benchmarks/reference_metrics.csv,true,,,,,,

@@ -1,0 +1,111 @@
+{
+  "stages": [
+    {
+      "id": "01_ingest",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/01_ingest.py"
+      ],
+      "inputs": [
+        "data/raw/ipums_extract.dat.gz",
+        "data/raw/ipums_extract.xml"
+      ],
+      "outputs": [
+        "data/interim/ipums_harmonized.parquet"
+      ]
+    },
+    {
+      "id": "02_harmonize_geography",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/02_harmonize_geography.py"
+      ],
+      "inputs": [
+        "data/interim/ipums_harmonized.parquet",
+        "data/raw/puma_cz_crosswalk.csv"
+      ],
+      "outputs": [
+        "data/interim/persons_cz.parquet"
+      ]
+    },
+    {
+      "id": "03_construct_outcomes",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/03_construct_outcomes.py"
+      ],
+      "inputs": [
+        "data/interim/persons_cz.parquet"
+      ],
+      "outputs": [
+        "data/interim/cz_year_outcomes.parquet"
+      ]
+    },
+    {
+      "id": "04_construct_exposure_iv",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/04_construct_exposure_iv.py"
+      ],
+      "inputs": [
+        "data/raw/adh_source.dta"
+      ],
+      "outputs": [
+        "data/interim/cz_period_exposure.parquet"
+      ]
+    },
+    {
+      "id": "05_build_panel",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/05_build_panel.py"
+      ],
+      "inputs": [
+        "data/interim/cz_year_outcomes.parquet",
+        "data/interim/cz_period_exposure.parquet"
+      ],
+      "outputs": [
+        "data/processed/cz_period_analysis.parquet"
+      ]
+    },
+    {
+      "id": "06_estimate_export",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/06_estimate_export.py"
+      ],
+      "inputs": [
+        "data/processed/cz_period_analysis.parquet"
+      ],
+      "outputs": [
+        "outputs/tables/table_index.csv",
+        "outputs/figures/figure_index.csv",
+        "outputs/diagnostics/estimation_diagnostics.csv"
+      ]
+    },
+    {
+      "id": "07_verify",
+      "implemented": false,
+      "command": [
+        "{python}",
+        "src/stages/07_verify.py"
+      ],
+      "inputs": [
+        "outputs/tables/table_index.csv",
+        "outputs/figures/figure_index.csv",
+        "outputs/diagnostics/estimation_diagnostics.csv",
+        "benchmarks/reference_metrics.csv",
+        "config/output_manifest.csv"
+      ],
+      "outputs": [
+        "outputs/diagnostics/replication_comparison.csv"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+name: trade-enrollment
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11,<3.13
+# Minimal scaffold only. Add audited analysis dependencies and export a lock
+# for each supported platform before the replication release.

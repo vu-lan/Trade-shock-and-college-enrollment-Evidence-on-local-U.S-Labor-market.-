@@ -1,0 +1,26 @@
+# Local environments and secrets
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.DS_Store
+# Source/generated data and results: README files only are tracked.
+data/raw/*
+!data/raw/README.md
+data/interim/*
+!data/interim/README.md
+data/processed/*
+!data/processed/README.md
+outputs/tables/*
+!outputs/tables/README.md
+outputs/figures/*
+!outputs/figures/README.md
+outputs/diagnostics/*
+!outputs/diagnostics/README.md
+logs/*
+!logs/README.md
+# Original benchmark data are deliberately not public by default.
+benchmarks/*
+!benchmarks/README.md
